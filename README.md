@@ -6,8 +6,6 @@ A modern, high-performance web platform for showcasing luxury residential proper
 
 TOKYO Apartments is a full-featured real estate marketing website that combines elegant design with functionality. The platform helps potential buyers and renters explore properties, discover amenities, view galleries, and connect with the sales team—all through an intuitive, mobile-first interface.
 
-**Live Demo** | [Visit Site](https://tokyo-apartments.example.com)
-
 ## Key Features
 
 - **Property Showcase** — Detailed apartment listings with specifications and visual galleries
