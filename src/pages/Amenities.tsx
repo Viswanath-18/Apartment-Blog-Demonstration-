@@ -117,24 +117,25 @@ export default function Amenities() {
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
 
   return (
-    <div className="pt-20">
+    <div className="pt-20 bg-background">
       {/* Hero Section */}
-      <section className="section-padding bg-tertiry">
-        <div className="container-custom">
+      <section className="section-padding bg-secondary/30 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-64 h-64 bg-primary/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl" />
+        <div className="container-custom relative z-10">
           <div
             ref={heroRef}
             className={cn(
-              'max-w-3xl mx-auto text-center',
-              heroVisible ? 'animate-fade-in-up' : 'opacity-0'
+              'max-w-4xl mx-auto text-center',
+              heroVisible ? 'animate-scale-up' : 'opacity-0'
             )}
           >
-            <span className="inline-block text-sm font-medium text-primary uppercase tracking-wider mb-4">
-              Amenities
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6">
+              Lifestyle & Comfort
             </span>
-            <h1 className="text-4xl md:text-5xl font-semibold tracking-tight mb-6">
-              Everything You Need
+            <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-8 leading-tight">
+              Everything You Need for <br /><span className="text-[#437059]">Modern Living</span>
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium">
               From fitness and recreation to safety and convenience, 
               we've thought of every detail to enhance your daily life.
             </p>
@@ -152,7 +153,7 @@ export default function Amenities() {
             description="World-class amenities designed for your comfort and well-being."
           />
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-12">
             {amenities.filter(a => a.image).map((amenity, index) => {
               const { ref, isVisible } = useScrollAnimation();
               return (
@@ -160,30 +161,30 @@ export default function Amenities() {
                   key={amenity.name}
                   ref={ref}
                   className={cn(
-                    'relative h-80 rounded-xl overflow-hidden group',
-                    isVisible ? 'animate-fade-in-up' : 'opacity-0'
+                    'relative h-[450px] rounded-[2.5rem] overflow-hidden group shadow-2xl transition-all duration-700',
+                    isVisible ? 'animate-reveal-left' : 'opacity-0'
                   )}
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  style={{ animationDelay: `${index * 200}ms` }}
                 >
                   <img
                     src={amenity.image}
                     alt={amenity.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="w-10 h-10 rounded-lg bg-primary/20 backdrop-blur-sm flex items-center justify-center">
-                        <amenity.icon className="w-5 h-5 text-primary-foreground" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
+                  <div className="absolute bottom-0 left-0 right-0 p-10 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-12 h-12 rounded-xl bg-[#437059] flex items-center justify-center shadow-lg">
+                        <amenity.icon className="w-6 h-6 text-white" />
                       </div>
-                      <span className="text-primary-foreground/70 text-sm font-medium uppercase tracking-wider">
+                      <span className="text-white/70 text-xs font-bold uppercase tracking-[0.2em]">
                         {amenity.category}
                       </span>
                     </div>
-                    <h3 className="text-2xl font-semibold text-primary-foreground mb-1">
+                    <h3 className="text-3xl font-bold text-white mb-3">
                       {amenity.name}
                     </h3>
-                    <p className="text-primary-foreground/80">
+                    <p className="text-white/70 text-lg font-medium max-w-md">
                       {amenity.description}
                     </p>
                   </div>
@@ -196,7 +197,7 @@ export default function Amenities() {
       <SectionDivider />
 
       {/* All Amenities Grid */}
-      <section className="section-padding bg-tertiary">
+      <section className="section-padding bg-secondary/20">
         <div className="container-custom">
           <SectionHeading
             label="Complete List"
@@ -204,7 +205,7 @@ export default function Amenities() {
             description="A comprehensive list of facilities available to all residents."
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-12">
             {amenities.map((amenity, index) => {
               const { ref, isVisible } = useScrollAnimation();
               return (
@@ -212,19 +213,19 @@ export default function Amenities() {
                   key={amenity.name}
                   ref={ref}
                   className={cn(
-                    'bg-background rounded-xl p-6 shadow-soft hover:shadow-medium transition-all duration-300',
-                    isVisible ? 'animate-fade-in-up' : 'opacity-0'
+                    'bg-white dark:bg-card rounded-2xl p-8 shadow-soft hover-lift border border-transparent hover:border-[#437059]/20 transition-all duration-500',
+                    isVisible ? 'animate-scale-up' : 'opacity-0'
                   )}
-                  style={{ animationDelay: `${(index % 4) * 50}ms` }}
+                  style={{ animationDelay: `${(index % 4) * 100}ms` }}
                 >
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                    <amenity.icon className="w-6 h-6 text-primary" />
+                  <div className="w-14 h-14 rounded-xl bg-[#437059]/10 flex items-center justify-center mb-6 shadow-inner group-hover:scale-110 transition-transform">
+                    <amenity.icon className="w-7 h-7 text-[#437059]" />
                   </div>
-                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                  <span className="text-[10px] font-bold text-primary uppercase tracking-[0.2em]">
                     {amenity.category}
                   </span>
-                  <h3 className="text-lg font-semibold mt-1 mb-2">{amenity.name}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <h3 className="text-xl font-bold mt-2 mb-3">{amenity.name}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed font-medium">
                     {amenity.description}
                   </p>
                 </div>

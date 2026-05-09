@@ -6,48 +6,6 @@ A modern, high-performance web platform for showcasing luxury residential proper
 
 TOKYO Apartments is a full-featured real estate marketing website that combines elegant design with functionality. The platform helps potential buyers and renters explore properties, discover amenities, view galleries, and connect with the sales team—all through an intuitive, mobile-first interface.
 
-## Key Features
-
-- **Property Showcase** — Detailed apartment listings with specifications and visual galleries
-- **Amenities Hub** — Interactive display of facilities and community features
-- **Responsive Gallery** — High-performance image carousel with lazy loading
-- **Contact Integration** — Direct messaging and inquiry system for lead generation
-- **Scroll Animations** — Subtle, performance-optimized entrance animations
-- **Dark/Light Mode** — Theme switching for comfortable browsing at any time
-- **SEO-Optimized** — Built-in meta tags and structured data for search visibility
-
-## Tech Stack
-
-| Layer | Technology |
-|-------|------------|
-| **Framework** | React 18 with TypeScript |
-| **Build Tool** | Vite (⚡ instant HMR, optimized production builds) |
-| **Styling** | Tailwind CSS + PostCSS |
-| **Component Library** | shadcn/ui (Radix UI primitives) |
-| **State Management** | TanStack React Query |
-| **Routing** | React Router v6 |
-| **Data Validation** | React Hook Form + Zod |
-| **Icons** | Lucide React |
-| **Notifications** | Sonner Toast |
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 16.x or higher
-- npm 8+ or yarn
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/tokyo-apartments.git
-cd tokyo-apartments
-
-# Install dependencies
-npm install
-
-# Start development server
 npm run dev
 ```
 
