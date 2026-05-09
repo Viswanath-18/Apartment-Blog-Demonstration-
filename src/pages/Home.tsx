@@ -61,7 +61,7 @@ function HeroSection() {
                 <img
                   src={logoMark}
                   alt="TOKYO Apartments logo"
-                  className="w-8 h-8 object-contain"
+                  className="w-10 h-10 object-contain"
                 />
               </div>
               <div className="text-left">
@@ -116,7 +116,7 @@ function HeroSection() {
                            text-white shadow-xl hover:shadow-2xl transition-all ease-out duration-300"
               >
                 <span className="relative font-bold">Schedule Visit</span>
-                <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease" />
+                <span className="absolute top-0 right-0 w-8 h-32 -mt-12 bg-white opacity-10 rotate-12 transform translate-x-12 transition-all duration-1000 ease-out group-hover:-translate-x-[300px]" />
               </Link>
             </div>
           </div>
